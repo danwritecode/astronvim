@@ -63,17 +63,10 @@ local config = {
 
   -- Set dashboard header
   header = {
-    " █████  ███████ ████████ ██████   ██████",
-    "██   ██ ██         ██    ██   ██ ██    ██",
-    "███████ ███████    ██    ██████  ██    ██",
-    "██   ██      ██    ██    ██   ██ ██    ██",
-    "██   ██ ███████    ██    ██   ██  ██████",
-    " ",
-    "    ███    ██ ██    ██ ██ ███    ███",
-    "    ████   ██ ██    ██ ██ ████  ████",
-    "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-    "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-    "    ██   ████   ████   ██ ██      ██",
+    "____             _____ _       ",
+    "|     ___ ___    |  |  |_|_____ ",
+    "|  |  | .'|   |  |  |  | |     |",
+    "|____/|__,|_|_|    ___/|_|_|_|_|",
   },
 
   dracula_colors = {
@@ -187,7 +180,14 @@ local config = {
   -- Configure plugins
   plugins = {
     init = {
-      "Mofiqul/dracula.nvim",
+      {
+        "Mofiqul/dracula.nvim",
+        config = function()
+          vim.g.dracula_colors = {
+            bg = "#0e1419",
+          }
+        end,
+      },
     },
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
