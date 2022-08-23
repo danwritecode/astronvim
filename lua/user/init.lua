@@ -27,8 +27,8 @@ local config = {
 
   -- Set colorscheme to use
   -- colorscheme = "default_theme",
-  -- colorscheme = "tokyonight",
-  colorscheme = "molokai",
+  colorscheme = "tokyonight",
+  -- colorscheme = "molokai",
 
   -- Override highlight groups in any theme
   highlights = {
@@ -187,7 +187,10 @@ local config = {
       },
       {
         "folke/tokyonight.nvim",
-        config = function() vim.g.tokyonight_style = "night" end,
+        config = function() 
+          vim.g.tokyonight_style = "night"
+          vim.g.tokyonight_transparent = true
+        end,
       },
       ["jose-elias-alvarez/null-ls"] = { disable = true },
       {
